@@ -5,10 +5,12 @@ export class ModularChatProvider implements vscode.LanguageModelChatProvider {
     private readonly agents: vscode.LanguageModelChatInformation[] = [youcomAgent];
 
     async provideLanguageModelChatInformation(
-        options: vscode.PrepareLanguageModelChatModelOptions,
+        _options: vscode.PrepareLanguageModelChatModelOptions,
         _token: vscode.CancellationToken
     ): Promise<vscode.LanguageModelChatInformation[]> {
-        return options.silent ? [] : this.agents;
+        // Always expose available agents so they appear in the model picker, even during
+        // silent discovery flows. Missing configuration is handled when the agent runs.
+        return this.agents;
     }
 
     async provideLanguageModelChatResponse(
