@@ -1,0 +1,12 @@
+{
+    "servers": {
+        "ydc-dev-arch-agent": {
+            "type": "http",
+            "url": "https://api.you.com/mcp",
+            "headers": {
+                "Authorization": "Bearer ${env:YOUCOM_API_KEY}",
+                "X-Youcom-Agent": "${env:YOUCOM_AGENT_ID}"
+            }
+        }
+    }
+}
