@@ -3,6 +3,10 @@
   "displayName": "You.com Agents",
   "description": "",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SPRIME01/You.com-Agents-Extention.git"
+  },
   "engines": {
     "vscode": "^1.105.0"
   },
